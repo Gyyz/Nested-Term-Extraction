@@ -1,0 +1,13 @@
+Summary of this training/testing:
+Settings:
+	Dropout:	0.5
+	Hidden_Dim:	100
+	Learning Rate:	0.01
+	LR Decay:	0.05
+	Max_Span_Len:	14
+	Seed:	626
+
+Dev & Test Results
+		Loss	Prec	Rec	F1	TRec	TF1	CLS_Prec	CLS_Rec	CLS_F1
+Dev:	0.3935	0.7004	0.8334	0.7611	0.7999	0.7469	0.4000	0.9625	0.5651
+Test:	0.3792	0.7199	0.8305	0.7713	0.8079	0.7614	0.4037	0.9750	0.5710
