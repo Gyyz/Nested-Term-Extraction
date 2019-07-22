@@ -5,20 +5,22 @@
 
 `./models`: the dir contains model python files, in it:
 
-	|--> `./charfeat`: the model to build char level feature. It is copied from [Jie's code](https://github.com/jiesutd/NCRFpp/tree/master/model), it contains:
-	
-		    |--> `charbigru.py`: the bi-directional gru model for char feature.
-		    
-		    |--> `charbilstm.py`: the bi-directional lstm model for char feature.
-		    
-		    |--> `charcnn.py`: the cnn pooling model for char feature
-		    
-	|--> `./wordfeat`: the model to build word level and sequence level feature. It is copied from [Jie's code](https://github.com/jiesutd/NCRFpp/tree/master/model) and modified, it contains:
-	
-		    |--> `WordRep.py`: the model class to build word level features
-		    
-		    |--> `WordSeq.py`: the model class to build sequential features from word level features
-		    
+```bash
+|--> `./charfeat`: the model to build char level feature. It is copied from [Jie's code](https://github.com/jiesutd/NCRFpp/tree/master/model), it contains:
+
+	    |--> `charbigru.py`: the bi-directional gru model for char feature.
+	    
+	    |--> `charbilstm.py`: the bi-directional lstm model for char feature.
+	    
+	    |--> `charcnn.py`: the cnn pooling model for char feature
+	    
+|--> `./wordfeat`: the model to build word level and sequence level feature. It is copied from [Jie's code](https://github.com/jiesutd/NCRFpp/tree/master/model) and modified, it contains:
+
+	    |--> `WordRep.py`: the model class to build word level features
+	    
+	    |--> `WordSeq.py`: the model class to build sequential features from word level features
+```
+
 
 ​	|-->`FCRanking.py`: the model file for span classification based ranking model
 
@@ -26,15 +28,15 @@
 
 `./utils`: the dir contains some utils that load data, build vocab, attention functions and ect:
 
-	|--> `alphabet.py`: the tools to build vocab, It is copied from [Jie's code](https://github.com/jiesutd/NCRFpp/tree/master/model)
-	
-	|--> `data.py`: the tools to load data and build vocab, It is copied from [Jie's code](https://github.com/jiesutd/NCRFpp/tree/master/model) and modified.
-	
-	|--> `functions.py`: the python file that includes attention, softmax, masked softmax and ect. tools.
-	
+```bash
+|--> `alphabet.py`: the tools to build vocab, It is copied from [Jie's code](https://github.com/jiesutd/NCRFpp/tree/master/model)
+
+|--> `data.py`: the tools to load data and build vocab, It is copied from [Jie's code](https://github.com/jiesutd/NCRFpp/tree/master/model) and modified.
+
+|--> `functions.py`: the python file that includes attention, softmax, masked softmax and ect. tools.
+```
 
 `main.py`: the python file to train and test model.
-
 
 **Key files**: _FCRanking.py   main.py_
 
@@ -59,18 +61,19 @@ Here we use the [GENIA corpus](http://www.geniaproject.org/genia-corpus)  and sh
 
 ### 2.2 How to run and parameters:
 1. train (you can change the parameters below, the parameter in <a style="color:red">()</a> is not a must):
-   
+  
    ```bash
    python main.py --status train (--early_stop 26 --dropout 0.5 --use_gpu False --gpuid 3 --max_lengths 5 --word_emb [YOUR WORD EMBEDDINGS DIR])
    ```
    
    
    
-2.  test (Be noted that the parameters should be strictly the same with those you used to train the model except the `--status`)
+2.  test (Be noted that the parameters should be <span style="color:red">***strictly***</span> the same with those you used to train the model except the `--status`)
 
    ```bash
-   python main.py --status test
+   python main.py --status test (--early_stop 26 --dropout 0.5 --use_gpu False --gpuid 3 --max_lengths 5 --word_emb [YOUR WORD EMBEDDINGS DIR])
    ```
 
    Please be noted that the path of data is written in `data.py` in `./data` dir.
 
+3. 
