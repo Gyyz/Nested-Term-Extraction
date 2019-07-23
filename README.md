@@ -77,3 +77,7 @@ Here we use the [GENIA corpus](http://www.geniaproject.org/genia-corpus)  and sh
    Please be noted that the path of data is written in `data.py` in `./data` dir.
 
 3. 
+
+-----------------------------------------
+Some details:
+ranker --> all best Dropout:0.6 lr:0.005 MaxLen:6 HD:100 POS:True ELMO:True Elmo_dim 100
