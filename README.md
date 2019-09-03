@@ -1,5 +1,5 @@
 # Term Extraction
-
+This is a term extraction method based on span ranking and classification, it supports the nested term extraction via an end2end manner and does not call for any additional features.
 ## 1. File Discribtion:
 `./data`: the dir contains the corpus
 
