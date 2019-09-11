@@ -1,4 +1,5 @@
 # Term Extraction
+A pytorch implement code for paper [Feature-Less End-to-End Nested Term Extraction](https://arxiv.org/pdf/1908.05426.pdf) in NLPCC XAI 2019.
 This is a term extraction method based on span ranking and classification, it supports the nested term extraction via an end2end manner and does not call for any additional features.
 ## 1. File Discribtion:
 `./data`: the dir contains the corpus
