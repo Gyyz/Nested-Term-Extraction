@@ -1,6 +1,7 @@
 # Term Extraction
 A pytorch implement code for paper [Feature-Less End-to-End Nested Term Extraction](https://arxiv.org/pdf/1908.05426.pdf) in NLPCC XAI 2019.
-This is a term extraction method based on span ranking and classification, it supports the nested term extraction via an end2end manner and does not call for any additional features.
+
+This code is based on span ranking and classification, it supports the nested term extraction via an end2end manner and does not call for any additional features.
 ## 1. File Discribtion:
 `./data`: the dir contains the corpus
 
@@ -81,4 +82,4 @@ Here we use the [GENIA corpus](http://www.geniaproject.org/genia-corpus)  and sh
 
 -----------------------------------------
 Some details:
-ranker --> all best Dropout:0.6 lr:0.005 MaxLen:6 HD:100 POS:True ELMO:True Elmo_dim 100
+ranker --> all best Dropout:0.6 | lr:0.005 | MaxLen:6 | HD:100 | POS:True | ELMO:True | Elmo_dim 100
