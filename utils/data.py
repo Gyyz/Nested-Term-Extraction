@@ -9,7 +9,7 @@ import pickle as pkl
 class Data(object):
     def __init__(self, args):
         super(Data, self).__init__()
-
+        self.args = args
         self.data_dir = args.data_dir # './data/gene_term_format_by_sentence.json'
         self.data_ratio = (0.9, 0.05, 0.05)  # total 2000
         self.model_save_dir = args.savemodel # './saves/model/'
@@ -20,7 +20,8 @@ class Data(object):
         self.use_elmo = args.use_elmo
         self.elmodim = args.elmodim
         self.pos_emb_dim = args.posdim
-        self.useSpanLen = True
+        self.useSpanLen = args.use_len
+        self.use_sentence_att = args.use_sent_att
         self.use_char = True
         self.ranking = 1
 

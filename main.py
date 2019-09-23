@@ -504,6 +504,10 @@ if __name__ == '__main__':
     parser.add_argument('--print_every', type=int, default=20)
     parser.add_argument('--use_pos', type=bool, default=False, help='Use POS-tagging feature')
     parser.add_argument('--use_elmo', type=bool, default=False, help='Use Elmo feature embeddings')
+    parser.add_argument('--use_head', type=bool, default=True, help='Using span head feature')
+    parser.add_argument('--use_span_node', type=bool, default=True, help='Using span node feature')
+    parser.add_argument('--use_len', type=bool, default=True, help='Using span len feature')
+    parser.add_argument('--use_sent_att', type=bool, default=True, help='Using sentence attention feature')
 
     args = parser.parse_args()
 

@@ -21,6 +21,7 @@ class FeatureModel(nn.Module):
         if data.use_char:
             print('char feature extractor:', data.char_feature_extractor)
         print('word feature extractor: ', data.word_feature_extractor)
+        self.data = data
         self.gpu = data.HP_gpu
         self.hidden_dim = data.HP_hidden_dim
         self.average_batch = data.average_batch_loss
@@ -40,7 +41,14 @@ class FeatureModel(nn.Module):
 
         self.hidden2Vec = nn.Linear(self.hidden_dim * self.max_span, data.HP_hidden_dim)
 
-        self.feature_dim = self.hidden_dim * 5
+        self.feature_dim = self.hidden_dim * 2
+
+        if self.data.use_sentence_att:
+            self.feature_dim += self.hidden_dim
+        if self.data.args.use_head:
+            self.feature_dim += self.hidden_dim
+        if self.data.args.use_span_node:
+            self.feature_dim += self.hidden_dim
 
         if self.pos_as_feature:
             self.feature_dim += self.pos_embedding_dim * 5
